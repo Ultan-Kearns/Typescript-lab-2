@@ -1,5 +1,7 @@
 var strArray = [];
 addTask("Hello");
+addTask("h");
+addTask("h");
 listAllTasks();
 deleteTask("Hello");
 listAllTasks();
@@ -13,12 +15,9 @@ function listAllTasks() {
     }
 }
 function deleteTask(task) {
-    for (var x = 0; x < strArray.length; x++) {
-        if (strArray[x] == task) {
-            console.log("String: " + strArray[x] +
-                " removed from array\n");
-            strArray.splice(x);
-            console.log("Number of elements in array after deletion: " + strArray.length);
-        }
+    var key = task;
+    var index = task.indexOf(key, 0);
+    if (index > -1) {
+        strArray.splice(index, 1);
     }
 }

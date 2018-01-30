@@ -1,5 +1,7 @@
 let strArray:Array<string> = [];
 addTask("Hello");
+addTask("h");
+addTask("h");
 listAllTasks();
 deleteTask("Hello");
 listAllTasks();
@@ -14,17 +16,18 @@ function listAllTasks()
     {
         console.log("\n\nString at position: " + x + " is equal to: " + strArray[x]);
     }
+    if(strArray.length == 0)
+    {
+        console.log("\nNo elements in array");
+    }
 }
 function deleteTask(task:string)
-{
-    for(let x: number = 0; x < strArray.length; x++)
+{   
+    let key : string = task;
+    let index: number = task.indexOf(key,0);
+    if(index > -1)
     {
-        if(strArray[x] == task)
-        {
-            console.log("String: " + strArray[x] + 
-            " removed from array\n");
-            strArray.splice(x);
-            console.log("Number of elements in array after deletion: " + strArray.length);
-        }
+        strArray.splice(index,1);
     }
+    console.log("Removed string " + task + " at index: " + index);
 }
