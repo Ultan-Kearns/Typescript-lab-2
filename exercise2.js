@@ -1,3 +1,4 @@
+"use strict";
 var strArray = [];
 addTask("Hello");
 addTask("h");
@@ -13,6 +14,9 @@ function listAllTasks() {
     for (var x = 0; x < strArray.length; x++) {
         console.log("\n\nString at position: " + x + " is equal to: " + strArray[x]);
     }
+    if (strArray.length == 0) {
+        console.log("\nNo elements in array");
+    }
 }
 function deleteTask(task) {
     var key = task;
@@ -20,4 +24,5 @@ function deleteTask(task) {
     if (index > -1) {
         strArray.splice(index, 1);
     }
+    console.log("Removed string " + task + " at index: " + index);
 }
